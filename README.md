@@ -22,8 +22,8 @@
 
   ⭕PLATFORM: ANDROID STUDIO
 
-![image](https://user-images.githubusercontent.com/99784181/203917903-2276a633-88f2-4385-9afa-8736be029107.png)
-![image](https://user-images.githubusercontent.com/99784181/203917965-326deb41-343f-4b5c-be36-23ccfa9187d5.png)
+![image](https://user-images.githubusercontent.com/99784181/203963110-36309247-a58e-4568-b4b4-17899d39f53f.png)
+![image](https://user-images.githubusercontent.com/99784181/203963154-99358221-8cc0-4224-b879-86db2b114748.png)
 
 
 
