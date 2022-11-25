@@ -10,7 +10,10 @@
     align-items: center;
 }
 .main .emergencybox{
-    display: flex;    
+    display: flex; 
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;   
   }
   .main .emergencybox .box{
     display: flex;
@@ -20,6 +23,7 @@
     padding: 20px;
   }
   .main .emergencybox .box img{
+    cursor: pointer;
     aspect-ratio: 1/1;
   }
   #one{
