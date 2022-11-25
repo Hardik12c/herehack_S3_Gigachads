@@ -179,7 +179,6 @@ if(navigator.geolocation){
             map.addObject(marker);
             var fire_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=fire&apiKey=${window.hereCreds.JS_KEY}`);
             fetch(fire_url).then(response => response.json()).then(data => {
-            console.log(data);
             for(var i=0;i<data.results.length;i++)
             {
                 if(data.results[i].position!=undefined)
@@ -201,8 +200,6 @@ if(navigator.geolocation){
                 }
             }
             route(minFirePos);
-            // console.log(minFireDist);
-            // console.log(minFirePos);
         }).catch(err => console.log(err));
         })
         // var fire_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=fire&apiKey=${window.hereCreds.JS_KEY}`);
@@ -221,6 +218,7 @@ if(navigator.geolocation){
         //     }}).catch(err => console.log(err));
         var posIcon = new H.map.Icon('img/genmark.png',{size: {w:45,h:45}});
         var marker = new H.map.Marker(browserPosition,{icon: posIcon});
+        marker.setData(`You are currently here`);
         map.addObject(marker);
     });
 } else{
