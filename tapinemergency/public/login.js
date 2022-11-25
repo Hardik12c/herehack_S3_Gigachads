@@ -14,8 +14,6 @@ formlogin.addEventListener('submit', async (e) => {
     const { data } = await axios.post('/login', { logemail, loginpass });
     if (data.message == "success") {
       window.location.href = "map.html";
-    } else {
-
     }
   } catch (error) {
     addon.innerHTML = `<div class="alert alert-primary alert-dismissible fade show" role="alert">

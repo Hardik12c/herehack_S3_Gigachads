@@ -2,8 +2,8 @@ let fire = document.querySelector('#one');
 let hospital = document.querySelector('#second');
 let police = document.querySelector('#third');
 const TIEbtn=document.querySelector('.btn');
-
-
+// import { PTCmobile } from "../login";
+// console.log(window.mobilenumber.mobile);
 var max = Number.MAX_SAFE_INTEGER;
 var minHospDist = max, minPolDist = max, minFireDist = max, minHospPos = {}, minPolPos, minFirePos;
 var platform = new H.service.Platform({
