@@ -195,6 +195,8 @@ if (navigator.geolocation) {
         marker.setData(`You are currently here`);
         map.addObject(marker);
         TIEbtn.addEventListener('click', () => {
+            var number = new URL('http://localhost:3000/sendmess');
+        fetch(number).then(response => response.json()).then(data => console.log(data)).catch(err => console.log(err));
             var hospital_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=hospital&apiKey=${window.hereCreds.JS_KEY}`);
             fetch(hospital_url).then(response => response.json()).then(data => {
                 for (var i = 0; i < data.results.length; i++) {
