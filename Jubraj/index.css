@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main .emergencybox{
+    display: flex;    
+  }
+  .main .emergencybox .box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    margin: 0px 100px;
+    padding: 20px;
+  }
+  .main .emergencybox .box img{
+    aspect-ratio: 1/1;
+  }
+  #one{
+    width: 100px;
+  }
+  #second{
+    width: 69px;
+    margin: 17px 16px
+  }
+  #third{
+    width: 100px;
+  }
+  
+  .main .emergencybox .box span{
+    font-weight: bold;
+    text-align: center;
+    font-size: 28px;
+  }

@@ -9,13 +9,29 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-
+    <link rel="stylesheet" href="index.css">
     <script type="text/javascript" src="js/credentials.js"></script>
   </head>
   <body>
     <h1 style="text-align: center;">#TIE</h1>
 
     <div id="mapContainer" style = "margin: auto; width: 88vw; height: 88vh;"></div>
+    <div class="main">
+      <div class="emergencybox">
+        <div class="box">
+          <img src="images/fire.png" alt="error" id="one">
+          <span>Fire</span>
+        </div>
+        <div class="box">
+          <img src="images/medical.png" alt="error" id="second">
+          <span>Medical</span>
+        </div>
+        <div class="box">
+          <img src="images/police.png" alt="error" id="third">
+          <span>Police</span>
+        </div>
+      </div>
+    </div>
   </body>
   <script type="text/javascript" src="js/map.js"></script>
 </html>
