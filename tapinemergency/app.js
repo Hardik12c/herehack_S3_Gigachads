@@ -11,14 +11,14 @@ app.use('/register', registerouter);
 app.use('/login', loginrouter);
 
 app.get('/sendmess', (req, res) => {
-    var sid = 'AC49c81e8d99b321a0353d4889b07709b6'
-    var auth_token = '9d2dee341ac8dbf57e30809841d4c7b4'
+    var sid = process.env.SID;
+    var auth_token = process.env.API;
 
     var twilio = require('twilio')(sid, auth_token);
 
     twilio.messages.create({
-        from: "+16402273198",
-        to: "+916297809554",
+        from: process.env.PHONE,
+        to: "+918869017426",
         body: "This is an Emergency message"
     })
         .then((res) => (console.log('message has sent!')))

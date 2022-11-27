@@ -105,6 +105,7 @@ if (navigator.geolocation) {
             addCircleToMap(map);
             var posIcon = new H.map.Icon('img/genmark.png', { size: { w: 45, h: 45 } });
             var marker = new H.map.Marker(browserPosition, { icon: posIcon });
+            marker.setData("You are currently here");
             map.addObject(marker);
             var hospital_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=hospital&apiKey=${window.hereCreds.JS_KEY}`);
             fetch(hospital_url).then(response => response.json()).then(data => {
@@ -134,6 +135,7 @@ if (navigator.geolocation) {
             addCircleToMap(map);
             var posIcon = new H.map.Icon('img/genmark.png', { size: { w: 45, h: 45 } });
             var marker = new H.map.Marker(browserPosition, { icon: posIcon });
+            marker.setData("You are currently here");
             map.addObject(marker);
             // markers.forEach(marker => marker.remove());
             var police_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=police&apiKey=${window.hereCreds.JS_KEY}`);
@@ -165,6 +167,7 @@ if (navigator.geolocation) {
             addCircleToMap(map);
             var posIcon = new H.map.Icon('img/genmark.png', { size: { w: 45, h: 45 } });
             var marker = new H.map.Marker(browserPosition, { icon: posIcon });
+            marker.setData("You are currently here");
             map.addObject(marker);
             var fire_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=fire&apiKey=${window.hereCreds.JS_KEY}`);
             fetch(fire_url).then(response => response.json()).then(data => {
@@ -181,7 +184,7 @@ if (navigator.geolocation) {
                             minFirePos = fire_position;
                         }
                         fire_marker.setData(`Fire Station Name: ${data.results[i].title}.
-                    Distance: ${distance}km`);
+                        Distance: ${distance}km`);
                         map.addObject(fire_marker);
                     }
                 }
@@ -190,13 +193,13 @@ if (navigator.geolocation) {
         })
 
         addCircleToMap(map);
-        var posIcon = new H.map.Icon('img/genmark.png', { size: { w: 45, h: 45 } });
-        var marker = new H.map.Marker(browserPosition, { icon: posIcon });
-        marker.setData(`You are currently here`);
-        map.addObject(marker);
+        // var posIcon = new H.map.Icon('img/genmark.png', { size: { w: 45, h: 45 } });
+        // var marker = new H.map.Marker(browserPosition, { icon: posIcon });
+        // marker.setData("You are currently here");
+        // map.addObject(marker);
         TIEbtn.addEventListener('click', () => {
             var number = new URL('http://localhost:3000/sendmess');
-        fetch(number).then(response => response.json()).then(data => console.log(data)).catch(err => console.log(err));
+            fetch(number).then(response => response.json()).then(data => console.log(data)).catch(err => console.log(err));
             var hospital_url = new URL(`https://places.ls.hereapi.com/places/v1/autosuggest?at=${browserPosition.lat},${browserPosition.lng}&q=hospital&apiKey=${window.hereCreds.JS_KEY}`);
             fetch(hospital_url).then(response => response.json()).then(data => {
                 for (var i = 0; i < data.results.length; i++) {
@@ -206,6 +209,9 @@ if (navigator.geolocation) {
                         let hosp_position = { lat: latitude, lng: longitude };
                         var hospicon = new H.map.Icon('img/hospmark.png', { size: { w: 32, h: 32 } });
                         var hosp_marker = new H.map.Marker(hosp_position, { icon: hospicon });
+                        var distance = data.results[i].distance / 1000;
+                        hosp_marker.setData(`Hospital Name: ${data.results[i].title}.
+                        Distance: ${distance}km`);
                         map.addObject(hosp_marker);
                     }
                 }
@@ -220,6 +226,9 @@ if (navigator.geolocation) {
                         let pol_position = { lat: latitude, lng: longitude };
                         var policon = new H.map.Icon('img/polmark.png', { size: { w: 32, h: 32 } });
                         var pol_marker = new H.map.Marker(pol_position, { icon: policon });
+                        var distance = data.results[i].distance / 1000;
+                        pol_marker.setData(`Police Station Name: ${data.results[i].title}.
+                        Distance: ${distance}km`);
                         map.addObject(pol_marker);
                     }
                 }
@@ -234,11 +243,19 @@ if (navigator.geolocation) {
                         let fire_position = { lat: latitude, lng: longitude };
                         var fireicon = new H.map.Icon('img/firmark.png', { size: { w: 32, h: 32 } });
                         var fire_marker = new H.map.Marker(fire_position, { icon: fireicon });
+                        var distance = data.results[i].distance / 1000;
+                        fire_marker.setData(`Fire Station Name: ${data.results[i].title}.
+                        Distance: ${distance}km`);
                         map.addObject(fire_marker);
                     }
                 }
             }).catch(err => console.log(err));
-            map.addEventListener('tap', function (evt) {
+        })
+        var posIcon = new H.map.Icon('img/genmark.png', { size: { w: 45, h: 45 } });
+        var marker = new H.map.Marker(browserPosition, { icon: posIcon });
+        marker.setData("You are currently here");
+        map.addObject(marker);
+        map.addEventListener('tap', function (evt) {
             if (evt.target instanceof H.map.Marker) {
                 var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
                     content: evt.target.getData()
@@ -246,7 +263,6 @@ if (navigator.geolocation) {
                 ui.addBubble(bubble);
             }
         });
-        })
     });
 } else {
     alert("Geolocation not supported");

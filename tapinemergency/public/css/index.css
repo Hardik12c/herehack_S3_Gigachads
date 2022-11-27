@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
 
+  background: url('../images/background\ image.jpg') no-repeat center center/cover;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -16,7 +19,7 @@
   z-index: 1;
   position: absolute;
   top: 70px;
-  right: 0px;
+  right: 15px;
   flex-direction: column;
 }
 
@@ -54,8 +57,8 @@
 .wrap {
   z-index: 1;
   position: absolute;
-  bottom: 83px;
-  left: 588px;
+  bottom: 147px;
+  left: 838px;
 }
 
 .btn {
