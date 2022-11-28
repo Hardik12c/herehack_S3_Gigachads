@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+
+  background: url('../img/background\ image.jpg') no-repeat center center/cover;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .emergencybox {
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  flex-direction: column;
+}
+
+.main .emergencybox .box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  padding: 10px 8px;
+}
+
+.main .emergencybox .box img {
+  cursor: pointer;
+  aspect-ratio: 1/1;
+}
+
+#one {
+  width: 100px;
+}
+
+#second {
+  width: 69px;
+  margin: 17px 16px
+}
+
+#third {
+  width: 100px;
+}
+
+.main .emergencybox .box span {
+  font-weight: bold;
+  text-align: center;
+  font-size: 28px;
+}
+
+.wrap {
+  z-index: 1;
+  position: absolute;
+  bottom: 83px;
+  left: 588px;
+}
+
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #d14f4f;
+  background: linear-gradient(90deg, rgb(255 92 92) 0%, rgb(255 0 0) 100%);
+  border: none;
+  border-radius: 1000px;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 39px 28px;
+  text-align: center;
+  border-radius: 151px;
+  text-decoration: none;
+}
+
+.btn::before {
+  content: '';
+  border-radius: 1000px;
+  min-width: calc(116px + 12px);
+  min-height: calc(119px + 12px);
+  border: 6px solid #7f1c1c;
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.btn:hover,
+.button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.btn:hover::before,
+button:focus::before {
+  opacity: 1;
+}
+
+.btn::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #ff1100;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.btn:hover::after,
+button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
