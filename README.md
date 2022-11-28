@@ -21,9 +21,10 @@
   ⭕Languages: JAVA, XML, HTML, CSS, JAVASCRIPT
 
   ⭕PLATFORM: ANDROID STUDIO
+![image](https://user-images.githubusercontent.com/99784181/204255882-680d35c0-c2e6-4f05-8681-2211661f9de7.png)
+![image](https://user-images.githubusercontent.com/99784181/204255914-703fb53d-6c4d-4574-965e-cf60117036a2.png)
+![image](https://user-images.githubusercontent.com/99784181/204256379-3707430f-4bea-4171-b7b8-bf665de91580.png)
 
-![image](https://user-images.githubusercontent.com/99784181/203963110-36309247-a58e-4568-b4b4-17899d39f53f.png)
-![image](https://user-images.githubusercontent.com/99784181/203963154-99358221-8cc0-4224-b879-86db2b114748.png)
 
 
 
