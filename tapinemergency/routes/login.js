@@ -3,7 +3,6 @@ const Form=require('../models/formschema')
 
 const formrouter=express.Router();
 
-// let PTCmobile=0;
 
 formrouter.route('/')
 .post(async(req,res)=>{
@@ -13,10 +12,9 @@ formrouter.route('/')
            return res.status(404).json({message:"Please fill in the email and password"})
         }
         const formdata=await Form.findOne({email:logemail});
-        if(loginpass!=formdata.password){
-            return res.status(401).json({message:"Password not matching"});
+        if(!formdata || loginpass!=formdata.password){
+            return res.status(401).json({message:"Please Fill Correct Email and Password"});
         }
-        // window.mobilenumber.mobile=formdata.PTC;
         res.status(200).send({message:"success",PTC:formdata.PTC});
     } catch (error) {
         res.send(error);

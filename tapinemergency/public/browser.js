@@ -23,6 +23,12 @@ formDOM.addEventListener('submit', async (e) => {
     const { data } = await axios.post('/register', { Name, email, password, personalmobile, Bloodgroup, PTC });
     console.log(data);
     if (data.message == "success") {
+      nam.value='';
+      mail.value='';
+      pass.value='';
+      mobile.value='';
+      Blood.value='';
+      PT.value='';
       window.location.href = "login.html";
     }
   } catch (error) {

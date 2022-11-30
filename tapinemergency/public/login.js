@@ -13,6 +13,8 @@ formlogin.addEventListener('submit', async (e) => {
     const loginpass = loginpassword.value;
     const { data } = await axios.post('/login', { logemail, loginpass });
     if (data.message == "success") {
+      loginemail.value="";
+      loginpassword.value="";
       window.location.href = "map.html";
     }
   } catch (error) {
