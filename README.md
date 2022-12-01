@@ -18,9 +18,9 @@
       3.HERE Routing-To complete complex journeys more efficiently to the required emergency service.
       4.HERE Studio-To customize map if needed.
       
-  ⭕Languages: JAVA, XML, HTML, CSS, JAVASCRIPT
+  ⭕FRONTEND: HTML, CSS, JAVASCRIPT, HERE API
 
-  ⭕PLATFORM: ANDROID STUDIO
+  ⭕BACKEND: NODEJS, EXPRESS, TWILIO
 ![image](https://user-images.githubusercontent.com/99784181/204255882-680d35c0-c2e6-4f05-8681-2211661f9de7.png)
 ![image](https://user-images.githubusercontent.com/99784181/204255914-703fb53d-6c4d-4574-965e-cf60117036a2.png)
 ![image](https://user-images.githubusercontent.com/99784181/204256379-3707430f-4bea-4171-b7b8-bf665de91580.png)
